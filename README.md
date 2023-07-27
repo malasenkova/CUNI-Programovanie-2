@@ -78,4 +78,6 @@ The *scraping* function fetches the web page content from the specified URL and 
 *The character limits ensures that hyperlinks other than headlines are not included in the list.*
 
 
+## References
+The contents of the file ```candlestick_patterns.py``` are by [John Muchow](https://www.tradingview.com/u/JohnMuchow/#published-scripts).
 
