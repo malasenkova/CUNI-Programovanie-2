@@ -77,3 +77,5 @@ This is a Python application that uses Streamlit and BeautifulSoup to scrape fin
 The *scraping* function fetches the web page content from the specified URL and extracts the headlines and corresponding article links. It filters out headlines with a length greater than 35 characters to display only relevant news. 
 *The character limits ensures that hyperlinks other than headlines are not included in the list.*
 
+
+
