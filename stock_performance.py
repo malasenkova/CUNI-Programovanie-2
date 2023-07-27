@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import yfinance as yf
 import datetime as dt
+import talib as ta
 
 #-------------------------------------------------------------------------------
 # Simple Moving Average
@@ -38,16 +39,11 @@ def linear_regression(data, window=14):
     x = np.arange(len(data))
     y = data['Close'].values
 
-    # Create a matrix with x values and a column of ones for the intercept term
-    X = np.column_stack((x, np.ones_like(x)))
-
-    # Calculate the coefficients using the least squares method
-    coeffs, _, _, _ = np.linalg.lstsq(X, y, rcond=None)
-
-    # Calculate the regression line using the coefficients
-    reg_line = X @ coeffs
+    # Calculate the linear regression line using talib's LINEARREG function
+    reg_line = ta.LINEARREG(y, timeperiod=window)
 
     return reg_line
+
 #-------------------------------------------------------------------------------
 # Calculate MACD
 #-------------------------------------------------------------------------------
@@ -70,24 +66,6 @@ def MACD(data, short_window=12, long_window=26, signal_window=9):
     data['Signal_Line'] = data['MACD'].ewm(span=signal_window, adjust=False).mean()
     data['MACD_Hist'] = data['MACD'] - data['Signal_Line']
     return data
-
-#-------------------------------------------------------------------------------
-# Calculate Linear Regression using the least squares method
-#-------------------------------------------------------------------------------
-def linear_regression(data, window=14):
-    x = np.arange(len(data))
-    y = data['Close'].values
-
-    # Create a matrix with x values and a column of ones for the intercept term
-    X = np.column_stack((x, np.ones_like(x)))
-
-    # Calculate the coefficients using the least squares method
-    coeffs, _, _, _ = np.linalg.lstsq(X, y, rcond=None)
-
-    # Calculate the regression line using the coefficients
-    reg_line = X @ coeffs
-
-    return reg_line
 
 #-------------------------------------------------------------------------------
 # Main
