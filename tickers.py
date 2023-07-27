@@ -22,6 +22,7 @@ def search_company_by_name(df, query):
 #-------------------------------------------------------------------------------
 def main():
     st.title("🔎 Company Search")
+    st.write("There is no need to open Google Search if you are unsure what is the ticker of a company you want to find. Search our NASDAQ database of companies by name.")
 
     # Load data from the CSV file
     df = pd.read_csv("nasdaq_screener.csv")
