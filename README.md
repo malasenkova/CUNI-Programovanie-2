@@ -1,4 +1,4 @@
-## Stock Analytics Dashboard
+# Stock Analytics Dashboard
 
 ## Install Python Requirements
 
