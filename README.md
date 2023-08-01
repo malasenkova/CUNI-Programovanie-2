@@ -13,7 +13,7 @@ $ streamlit main.py
 ```
 
 ## Application Flow
-
+[https://github.com/malasenkova/CUNI-Programovanie-2/blob/main/Screen%20Recording%202023-07-27%20at%2018.37.31-2.mov]
 ## 📊 Technical analysis
 
 This is a Python application that uses Streamlit to visualize historical stock data and various technical indicators for a selected stock. The application allows the user to input a ticker symbol and select a date range. It then fetches historical stock data using the Yahoo Finance API and calculates the following indicators:
