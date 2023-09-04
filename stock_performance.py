@@ -83,15 +83,15 @@ def main():
     data = yf.download(selected_ticker, start=start_date, end=end_date)
 
     # Calculate Exponential Moving Average (EMA)
-    ema_period = st.slider("Select EMA Period", min_value=5, max_value=50, value=20)
+    ema_period = st.slider("Select EMA Period", min_value=0, max_value=100, value=20)
     data = EMA(data, window=ema_period)
 
     # Calculate Relative Strength Index (RSI)
-    rsi_period = st.slider("Select RSI Period", min_value=5, max_value=30, value=14)
+    rsi_period = st.slider("Select RSI Period", min_value=0, max_value=100, value=14)
     data = RSI(data, window=rsi_period)
 
     # Calculate Simple Moving Average (SMA)
-    sma_window = st.slider("Select SMA Period", min_value=5, max_value=100, value=100)
+    sma_window = st.slider("Select SMA Period", min_value=0, max_value=100, value=50)
     data = SMA(data, window=sma_window)
 
     # Calculate Linear Regression for Closing Price
